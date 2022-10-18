@@ -1,0 +1,18 @@
+Description: add a test on client, as it can be nil with http-parser 2.7
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=882308
+Bug: https://github.com/igrigorik/em-http-request/issues/316
+Author: Jérémy Lal <jerry@eda.sarl>
+Reviewed-by: Cédric Boutillier <boutil@debian.org>
+Last-Update: 2018-07-31
+
+--- a/lib/em-http/http_connection.rb
++++ b/lib/em-http/http_connection.rb
+@@ -131,7 +131,7 @@
+       end
+ 
+       @p.on_message_complete = proc do
+-        if !client.continue?
++        if client and !client.continue?
+           c = @clients.shift
+           c.state = :finished
+           c.on_request_complete

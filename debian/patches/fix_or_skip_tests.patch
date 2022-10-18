@@ -1,0 +1,16 @@
+Description: fix some tests
+ - this regexp should be adapted for eventmachine >= 1.2
+Author: Cédric Boutillier <boutil@debian.org>
+Last-Update: 2018-07-31
+
+--- a/spec/dns_spec.rb
++++ b/spec/dns_spec.rb
+@@ -19,7 +19,7 @@
+       http = EventMachine::HttpRequest.new('http://somethinglocal/', :connect_timeout => 0.1).get
+       http.callback { failed(http) }
+       http.errback {
+-        http.error.should match(/unable to resolve server address/)
++        http.error.should match(/unable to resolve (server )?address/)
+         http.response_header.status.should == 0
+         EventMachine.stop
+       }

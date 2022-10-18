@@ -1,0 +1,15 @@
+Description: disable all test, that require network access
+Author: Jonas Genannt <jonas.genannt@capi2name.de>
+Forwarded: not-needed
+
+--- a/spec/helper.rb
++++ b/spec/helper.rb
+@@ -16,7 +16,7 @@ def failed(http = nil)
+ end
+ 
+ def requires_connection(&blk)
+-  blk.call if system('ping -t1 -c1 google.com 2>&1 > /dev/null')
++  blk.call if nil
+ end
+ 
+ def requires_port(port, &blk)

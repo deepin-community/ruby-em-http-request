@@ -1,0 +1,50 @@
+Source: ruby-em-http-request
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Tollef Fog Heen <tfheen@debian.org>
+Build-Depends: debhelper (>= 11~),
+               gem2deb,
+               ruby-addressable,
+               ruby-cookiejar,
+               ruby-em-socksify,
+               ruby-escape-utils,
+               ruby-eventmachine,
+               ruby-http-parser.rb,
+               ruby-multi-json,
+               ruby-rack,
+               ruby-rspec
+Standards-Version: 4.1.5
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-em-http-request.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-em-http-request
+Homepage: http://github.com/igrigorik/em-http-request
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+
+Package: ruby-em-http-request
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ruby | ruby-interpreter,
+         ruby-addressable (>= 2.0.0),
+         ruby-cookiejar,
+         ruby-em-socksify,
+         ruby-escape-utils,
+         ruby-eventmachine (>= 0.12.9),
+         ruby-http-parser.rb,
+         ruby-multi-json,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Suggests: ruby-simple-oauth
+Description: EventMachine based, async HTTP Request client
+ em-http-client is an asynchronous HTTP client based on EventMachine
+ with support for:
+ .
+  * Asynchronous HTTP API for single & parallel request execution
+  * Keep-Alive and HTTP pipelining support
+  * Auto-follow 3xx redirects with max depth
+  * Automatic gzip & deflate decoding
+  * Streaming response processing
+  * Streaming file uploads
+  * HTTP proxy and SOCKS5 support
+  * Basic Auth & OAuth
+  * Connection-level & Global middleware support

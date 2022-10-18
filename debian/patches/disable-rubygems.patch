@@ -1,0 +1,16 @@
+Description: remove usage of bundler and rubygems for tests
+Author: Tollef Fog Heen <tfheen@debian.org>
+Forwarded: not-needed
+
+--- a/spec/helper.rb
++++ b/spec/helper.rb
+@@ -1,6 +1,7 @@
+ require 'spec_helper'
+-require 'rubygems'
+-require 'bundler/setup'
++# We don't need rubygems, dependencies are handled by apt
++# require 'rubygems'
++# require 'bundler/setup'
+ 
+ require 'em-http'
+ require 'em-http/middleware/oauth2'

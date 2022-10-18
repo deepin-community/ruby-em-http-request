@@ -1,0 +1,103 @@
+ruby-em-http-request (1.1.5-3) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>  Thu, 21 Jul 2022 17:57:27 +0800
+
+ruby-em-http-request (1.1.5-3) unstable; urgency=medium
+
+  * skip test.
+  * update version
+
+ -- wangxiangyu <wangxiangyu@uniontech.com>  Thu, 21 Jul 2022 17:56:17 +0200
+
+ruby-em-http-request (1.1.5-2) unstable; urgency=medium
+
+  * Team upload
+  * Add avoid_nil_client.patch (Closes: #882308)
+    Thanks Christoph Biedl for the report and Jérémy Lal for the patch
+  * Use salsa.debian.org in Vcs-* fields
+  * Move debian/watch to gemwatch.debian.net
+  * Bump Standards-Version to 4.1.5 (no changes needed)
+  * Bump debhelper compatibility level to 11
+
+ -- Cédric Boutillier <boutil@debian.org>  Tue, 31 Jul 2018 17:47:17 +0200
+
+ruby-em-http-request (1.1.5-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Cédric Boutillier ]
+  * Remove version in the gem2deb build-dependency
+  * Use https:// in Vcs-* fields
+  * Run wrap-and-sort on packaging files
+
+  [ Sebastien Badia ]
+  * d/compat: Bump debhelper compat to 10
+  * d/copyright: Added a copyright for debian/* files (Closes: #739711)
+  * Bump Standards-Version to 3.9.8 (no changes needed)
+  * Update debian packaging using dh-make-ruby
+  * New upstream version 1.1.5
+  * d/patches: Refresh patchs (new upstream version)
+
+ -- Sebastien Badia <sbadia@debian.org>  Mon, 19 Dec 2016 21:48:43 +0100
+
+ruby-em-http-request (1.1.2-2) unstable; urgency=medium
+
+  * Team upload
+
+  [ Per Andersson ]
+  * Add ruby-em-socksify to Depends (Closes: #745667)
+
+ -- Per Andersson <avtobiff@gmail.com>  Wed, 23 Apr 2014 23:31:14 +0200
+
+ruby-em-http-request (1.1.2-1) unstable; urgency=medium
+
+  * Team upload.
+  [ Praveen Arimbrathodiyil ]
+  * d/p/disable_rubygems:
+    - remove extra characters at end of line
+    - refresh disable_rubygems patch
+  * add .pc to .gitignore
+  * use ruby-tests.rake
+  * remove spec_adjust_require patch
+  * d/control:
+   - update build dep, uncomment vcs
+   - add bdep on ruby-cookiejar
+
+  [ Cédric Boutillier ]
+  * use canonical URI in Vcs-* fields
+  * debian/copyright: use copyright-format/1.0 official URL for Format field
+
+
+  [ Jonas Genannt ]
+  * Imported Upstream version 1.1.2 (Closes: #725571, #710044)
+  * d/control:
+    - bumped standards version to 3.9.5 (no changes needed)
+    - wrap-sort
+    - added depend ruby-multi-json
+    - changed from ruby-http-parser to ruby-http-parser.rb
+    - added ruby-cookiejar as depend
+    - switched XS-Ruby-Versions to all
+    - change Architecture to all - no c ext included anymore
+    - added ruby-simple-oauth as Suggests
+  * d/p/diasble-rubygems.patch:
+    - refreshed
+    - fixed typo in patch name
+    - added DEP3 header
+  * added patch to disable network test
+  * added patch to usw WEBrick not Mongrel
+    - webrick strips default ports
+    - webrick sends no 0 as content lengh, its empty
+    - disabled failing tests because of mongrel/webrick switch
+  * d/copyright
+   - removed old c ext copyright
+   - copyright for debian/ is missing, see #739711 / pending
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Wed, 12 Mar 2014 18:42:14 +0100
+
+ruby-em-http-request (0.3.0-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Tollef Fog Heen <tfheen@debian.org>  Wed, 27 Jun 2012 21:19:09 +0200

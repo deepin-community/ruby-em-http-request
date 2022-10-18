@@ -1,0 +1,5 @@
+disable-rubygems.patch
+require_connection_test.patch
+change_mongrel_to_webrick.patch
+fix_or_skip_tests.patch
+avoid_nil_client.patch
